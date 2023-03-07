@@ -1,0 +1,13 @@
+<%= form_with model: model do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_area :details %>
+  <% unless model.new_record? %>
+    <%= f.check_box :completed %>
+    <%= f.label :completed %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to "Back to list", tasks_path %>
